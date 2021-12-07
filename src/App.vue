@@ -1,17 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <table>
+      <thead>
+        <tr>
+        <th>Termék</th>
+        <th>Ár</th>
+        <th>Mennyiség</th>
+        <th>Operations</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr v-for="sor in rows"
+            v-bind:key="sor.title">
+            <td>{{sor.title}}</td>
+            <td>{{sor.price}}</td>
+            <td>{{sor.quantity}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import Row from './components/Row.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //Row,
   },
   data() {
     return {
