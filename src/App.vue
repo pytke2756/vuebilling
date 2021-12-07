@@ -7,14 +7,17 @@
         <th>Ár</th>
         <th>Mennyiség</th>
         <th>Operations</th>
+        <th>Összérték</th>
       </tr>
       </thead>
       <tbody>
         <tr v-for="sor in rows"
             v-bind:key="sor.title">
             <td>{{sor.title}}</td>
-            <td>{{sor.price}}</td>
+            <td>{{sor.price}} Ft</td>
             <td>{{sor.quantity}}</td>
+            <td>gombok</td>
+            <td>{{sor.price * sor.quantity}} Ft</td>
         </tr>
         <tr>
           <td>
