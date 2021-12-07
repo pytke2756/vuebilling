@@ -16,14 +16,26 @@
             <td>{{sor.price}}</td>
             <td>{{sor.quantity}}</td>
         </tr>
-        
+        <tr>
+          <td>
+            <input type="text" placeholder="termék neve"> <!-- a   " v-model="uj.title" " elüntette a képet így kivettem-->
+          </td>
+          <td>
+            <input type="number" placeholder="ár">
+          </td>
+          <td>
+            <input type="number" placeholder="mennyiség">
+          </td>
+          <td>
+            <button v-on:click="felvesz">Hozzáad</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
 </template>
 
 <script>
-//import Row from './components/Row.vue'
 
 export default {
   name: 'App',
@@ -55,7 +67,19 @@ export default {
         },
       ]
     }
-  }
+  },
+  adatok:{
+    uj:{
+      title:"",
+      price:"",
+      quantity: "",
+    },
+  },
+  methods:{
+    felvesz(){
+       this.rows.push({...this.adatok})
+    }
+  },
 }
 </script>
 
